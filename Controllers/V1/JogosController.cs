@@ -1,6 +1,7 @@
 ﻿using ApiCatologoJogo.InputModel;
 using ApiCatologoJogo.Services;
 using ApiCatologoJogo.ViewModel;
+using ExemploApiCatalogoJogos.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -54,7 +55,7 @@ namespace ApiCatologoJogo.Controllers.V1
 
                 return Ok(jogo);
             }
-            catch (/*JogoJaCadastradoException ex*/ Exception ex)
+            catch (JogoJaCadastradoException)
             {
                 return UnprocessableEntity("Já existe um jogo com este nome para esta produtora");
             }
@@ -69,7 +70,7 @@ namespace ApiCatologoJogo.Controllers.V1
 
                 return Ok();
             }
-            catch (/*JogoNaoCadastradoException*/ Exception ex)
+            catch (JogoNaoCadastradoException)
             {
                 return NotFound("Não existe este jogo");
             }
@@ -85,7 +86,7 @@ namespace ApiCatologoJogo.Controllers.V1
 
                 return Ok();
             }
-            catch (/*JogoNaoCadastradoException*/ Exception ex)
+            catch (JogoNaoCadastradoException )
             {
                 return NotFound("Não existe este jogo");
             }
@@ -100,7 +101,7 @@ namespace ApiCatologoJogo.Controllers.V1
 
                 return Ok();
             }
-            catch (/*JogoNaoCadastradoException*/ Exception ex)
+            catch (JogoNaoCadastradoException)
             {
                 return NotFound("Não existe este jogo");
             }

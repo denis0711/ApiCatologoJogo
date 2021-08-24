@@ -9,10 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entites\" />
-    <Folder Include="Exceptions\" />
     <Folder Include="Middleware\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
