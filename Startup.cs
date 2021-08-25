@@ -1,3 +1,4 @@
+using ApiCatalogoJogo.Middleware;
 using ApiCatologoJogo.Repositories;
 using ApiCatologoJogo.Services;
 using ExemploApiCatalogoJogos.Repositories;
@@ -49,6 +50,7 @@ namespace ApiCatologoJogo
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiCatologoJogo v1"));
             }
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseHttpsRedirection();
 
